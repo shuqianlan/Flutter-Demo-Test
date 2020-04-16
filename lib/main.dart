@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
 //      ),
       debugShowCheckedModeBanner: false,
 //      home: MyHomePage(title: 'wuzh'),
-    initialRoute: '/', // 命名routes的/为首页
+      initialRoute: '/', // 命名routes的/为首页
       routes: {
         '/': (context) => MyHomePage(title: 'Flutter Demo Home Page'),
         'no_result_or_args': (context) => NewRoute(),
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(height: 50.0,),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).pushNamed('get_result_or_args', arguments: 'hi'),
+        onPressed: () => Navigator.of(context).pushNamed('get_result_or_args', arguments: WordPair.random()),
 //        onPressed: () async {
 //          var result = await Navigator.push(context, MaterialPageRoute(builder: (context) =>
 ////              NewRoute() // 下一页
